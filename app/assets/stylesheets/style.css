@@ -1021,16 +1021,16 @@ form input[type="submit"]:hover {
   color: #666;
 }
 
-.comments {
+.posts {
   padding: 5px;
   margin-top: 15px;
 }
 
-.comments a {
+.posts a {
   color: #57C3E9;
 }
 
-.comments a:hover {
+.posts a:hover {
   text-decoration: underline;
 }
 

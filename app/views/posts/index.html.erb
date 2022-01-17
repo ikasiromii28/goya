@@ -1,6 +1,18 @@
-posts#index
 <div class="contents row">
-  <% @posts.each do |post| %>
-    <%= post.kibun %>
-  <% end %>
+  <div class="container">
+    <h3>投稿する</h3>
+    <%= form_with(model: @post, local: true) do |form| %>
+      <%= form.text_field :kibun, placeholder: "今日の気持ち" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+
+    posts#index
+    <div class="posts">
+      <% @posts.each do |post| %>
+        <div class ="kibun">
+          <p><%= post.kibun %></p>
+        </div>
+      <% end %>
+    <div>
+  </div>
 </div>

@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
   def index
-    @kimochis = Kimochi.all
+    @posts = Post.all
   end
 end

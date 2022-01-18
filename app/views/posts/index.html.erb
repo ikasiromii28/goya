@@ -1,16 +1,21 @@
 <div class="contents row">
   <div class="container">
-    <h3>投稿する</h3>
-    <%= form_with(model: @post, local: true) do |form| %>
-      <%= form.text_field :kibun, placeholder: "今日の気持ち" %>
-      <%= form.submit "SEND" %>
-    <% end %>
+    <div class="kimochi">
+      <h3>今日の気持ち</h3>
+      <%= form_with(model: @post, local: true) do |f| %>
+        <%= f.date_field :date, class: 'select' %>
+        <%= f.select :kibun,{"🥭": 1, "🍈": 2, "🍌": 3, "🥒": 4}, {include_blank: '気分を選択'}, class: 'select' %>
+        <%= f.submit "SEND" %>
+      <% end %>
+    </div>
 
-    posts#index
     <div class="posts">
       <% @posts.each do |post| %>
-        <div class ="kibun">
-          <p><%= post.kibun %></p>
+        <div class="post">
+          <%= l post.date, format: :short %>
+          <div class ="kibun">
+            <p><%= post.kibun %></p>
+          </div>
         </div>
       <% end %>
     <div>

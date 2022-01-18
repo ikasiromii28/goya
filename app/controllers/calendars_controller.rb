@@ -1,4 +1,6 @@
 class CalendarsController < ApplicationController
+  before_action :authenticate_user!, except: :index
+
   def index
     get_week
     @post = Post.new
@@ -16,7 +18,7 @@ class CalendarsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:kibun, :date)
+    params.require(:post).permit(:kibun, :date).merge(user_id: current_user.id)
   end
 
   def get_week

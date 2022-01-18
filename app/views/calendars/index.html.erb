@@ -1,0 +1,28 @@
+<div class="contents row">
+  <div class="container">
+    <div class="kimochi">
+      <h3>今日の気持ち</h3>
+      <%= form_with(model: @post, url: calendars_path, local: true) do |f| %>
+        <%= f.date_field :date, class: 'select' %>
+        <%= f.text_field :kibun, class: 'text-input' %>
+        <%= f.submit "SEND" %>
+      <% end %>
+    </div>
+    <div class='calendar'>
+      <% @week_days.each do |day| %>
+        <div class='item'>
+          <div class='date'>
+            <%= day[:month] %>/<%= day[:date] %><%= day[:wday]%>
+          </div>
+          <ul class='content'>
+          <% if day[:posts].length != 0 %>
+            <% day[:posts].each do |post| %>
+              <li class='post-list'><%= post %></li>
+            <% end %>
+          <% end %>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

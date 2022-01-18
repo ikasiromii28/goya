@@ -59,3 +59,5 @@ end
 
 gem 'pry-rails'
 gem 'devise'
+
+gem 'counter_culture', '~> 1.8'

@@ -835,28 +835,6 @@ header.header .user_nav ul li a {
   box-sizing: border-box;
 }
 
-.kimochi {
-  margin-bottom: 20px;
-  padding: 30px;
-  box-shadow: 0 0 10px rgb(235, 235, 177);
-  
-}
-
-.posts {
-  padding: 5px;
-  margin-top: 15px;
-}
-
-.post {
-  display: flex;
-
-}
-
-.kibun {
-  margin-left: 5px;
-}
-
-
 footer {
   margin: 30px auto;
   padding: 10px;
@@ -879,29 +857,4 @@ footer p {
 
 .search-form .search-btn {
   width: 10%;
-}
-
-.form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 15vh;
-}
-
-.label {
-  font-size: 3vh;
-  color: rgb(255, 255, 255);
-}
-
-.text-input {
-  height: 4vh;
-  width: 15vw;
-  margin: 0 2vw;
-}
-
-.select {
-  height: 4vh;
-  width: 20vw;
-  margin: 5px 5px;
-  text-align: center
 }

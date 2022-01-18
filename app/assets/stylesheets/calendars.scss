@@ -1,0 +1,71 @@
+// Place all the styles related to the calendars controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.calendar {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column-reverse;
+}
+
+.item {
+  margin: 0.5vw;
+  border: 3px solid rgb(235, 235, 177);
+  width: 90%;
+  height: 90px;
+}
+
+.date {
+  height: 5vh;
+  display: flex;
+  font-size: 3vh;
+  align-items: center;
+  // justify-content: center;
+  padding-left: 5vh;
+  border-bottom: 1px solid rgb(235, 235, 177);
+}
+
+.count {
+  font-size: 2vh;
+  padding-left: 10px;
+}
+
+.content {
+  min-height: 25vh;
+  padding: 5px;
+  white-space: nowrap;
+  overflow: scroll;
+  padding-left: 3vh;
+}
+
+.post-list {
+  display: inline-flex;
+  font-size: 3vh;
+  align-items: center;
+  justify-content: center;
+  margin: 1vh 0;
+}
+
+.kimochi {
+  padding: 20px;
+  box-shadow: 0 0 10px rgb(235, 235, 177);
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 15vh;
+}
+
+
+.select {
+  height: 4vh;
+  width: 15vw;
+  margin: 5px 5px;
+  text-align: center
+}

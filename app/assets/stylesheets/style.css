@@ -867,7 +867,7 @@ footer p {
 .left-bar {
   background-color: green;
   width: 30vw;
-  height: auto
+  height: auto;
 }
 .left-header {
   height: 100px;
@@ -880,6 +880,14 @@ footer p {
 .left-lists {
   height: calc(100vh - 100px);
   padding: 0 15px;
+}
+
+.room {
+  text-decoration: none;
+}
+.room-name {
+  font-size: large;
+  color: white;
 }
 
 /* main */

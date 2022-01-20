@@ -865,54 +865,19 @@ footer p {
 
 /* left*/
 .left-bar {
-  background-color: #fffac2;
-  width: 150px;
-  height: 100vh
+  background-color: green;
+  width: 30vw;
+  height: auto
 }
 .left-header {
   height: 100px;
   padding: 0 15px;
-  background-color: #fffac2;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.left-header-name a {
-  font-size: 40px;
-  color: #f37053;
-  text-decoration: none;
-}
-.left-lists {
-  background-color: #fffac2;
-  height: calc(100vh - 100px);
-  padding: 0 15px;
-}
 
-.wrapper {
-  display: flex;
-}
-
-/* left*/
-.left-bar {
-  background-color: #fffac2;
-  width: 150px;
-  height: 100vh
-}
-.left-header {
-  height: 100px;
-  padding: 0 15px;
-  background-color: #fffac2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.left-header-name a {
-  font-size: 40px;
-  color: #f37053;
-  text-decoration: none;
-}
 .left-lists {
-  background-color: #fffac2;
   height: calc(100vh - 100px);
   padding: 0 15px;
 }
@@ -920,7 +885,7 @@ footer p {
 /* main */
 .main {
   background-color: #fffac2;
-  width: calc(100vw - 150px - 150px);
+  width: calc(100vw - 30vw);
 }
 /* mainヘッダー */
 .main-header {
@@ -947,75 +912,4 @@ footer p {
   border: 1px solid darkred;
   color: darkred;
   padding: 20px;
-}
-/* kimoshi一覧 */
-.kimochis {
-  background-color: #f6efdb;
-  height: calc(100vh - 100px - 90px);
-  padding: 46px 40px 0;
-  overflow: scroll;
-}
-.kimochi {
-  margin: 10px 0 0 0;
-}
-.upper-kimochi {
-  display: flex;
-}
-.kimochi-user {
-  color: #f37053;
-  font-size: 16px;
-}
-.kimochi-date {
-  color: #f37053;
-  font-size: 12px;
-  padding-left: 10px;
-}
-.lower-kimochi {
-  margin-top: 10px;
-}
-.kimochi-content {
-  color: #f37053;
-  font-size: 14px;
-  margin-bottom: 40px;
-}
-/* 送信ボタン */
-.form {
-  background-color: #fcc9ac;
-  height: 90px;
-  padding: 20px 40px;
-  display: flex;
-}
-.form-input {
-  background-color: white;
-  width: 100%;
-}
-.form-message {
-  border: none;
-  height: 50px;
-  width: 100%;
-  padding-left: 10px;
-}
-.form-submit {
-  background-color: #38AEF0;
-  border: none;
-  color: white;
-  font-size: 16px;
-  height: 50px;
-  margin-left: 15px;
-  padding: 0 20px;
-}
-/* right */
-.right-bar {
-  background-color: #fffac2;
-  width: 150px;
-  height: 100vh
-}
-.right-header {
-  height: 100px;
-  padding: 0 15px;
-}
-.right-lists {
-  background-color: #fffac2;
-  height: calc(100vh - 100px);
-  padding: 0 15px;
 }

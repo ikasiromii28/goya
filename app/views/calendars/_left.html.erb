@@ -1,20 +1,4 @@
 <div class="left-header">
-  <%#= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |form| %>
-    <%#= form.text_field :keyword, placeholder: "ユーザーを検索する", class: "search-input" %>
-    <%#= form.submit "検索", class: "search-btn" %>
-  <%# end %>
-  <div class="contents row">
-    <%#= user_lists(@users) %>
-  </div>
 </div>
 <div class="left-lists">
-  <div class="rooms">
-  <% current_user.rooms.each do |room| %>
-    <div class="room">
-      <div class="room-name">
-        <a href="#"><%= room.name %></a>
-      </div>
-    </div>
-  <% end %>
-</div>
 </div>

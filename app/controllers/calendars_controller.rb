@@ -19,7 +19,7 @@ class CalendarsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:kibun, :date).merge(user_id: current_user.id)
+    params.require(:post).permit(:kibun, :date, :created_at).merge(user_id: current_user.id)
   end
 
   def get_week

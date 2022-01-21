@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root 'calendars#index'
   resources :calendars
   resources :rooms, only: [:new, :create]
+  resources :users, only: :show
 end

@@ -3,5 +3,10 @@ Rails.application.routes.draw do
   root 'calendars#index'
   resources :calendars
   resources :rooms, only: [:new, :create]
-  resources :users, only: :show
+  resources :users, except: :create do
+    resources :follows, only: [:create, :destroy]
+    member do
+     get :followings, :followeds
+    end
+  end
 end

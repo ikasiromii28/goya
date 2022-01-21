@@ -26,14 +26,14 @@ class User < ApplicationRecord
   has_many :followed_users, through: :followings, source: :followed #フォローされる側
 
   def follow(other_user_id)
-  followeds_follows.find_by(following_id: other_user_id).create
+    followeds_follows.find_by(following_id: other_user_id).create
   end
 
   def following?(other_user)
-  following_users.include?(other_user)
+    following_users.include?(other_user)
   end
 
   def unfollow(other_user_id)
-  followed_users.find_by(following_id: other_user_id).destroy
+    followed_users.find_by(following_id: other_user_id).destroy
   end  
 end

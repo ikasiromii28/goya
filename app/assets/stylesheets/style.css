@@ -921,3 +921,7 @@ footer p {
   color: darkred;
   padding: 20px;
 }
+
+.m-50 {
+  margin: 100px;
+}

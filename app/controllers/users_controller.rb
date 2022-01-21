@@ -46,5 +46,4 @@ class UsersController < ApplicationController
       @week_days.push(days)
     end
   end
-
 end

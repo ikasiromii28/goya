@@ -23,6 +23,6 @@ class User < ApplicationRecord
            foreign_key: 'following_id',
            dependent: :destroy,
            inverse_of: :following
-  has_many :following_users, through: :followeds, source: :following #フォローする側
-  has_many :followed_users, through: :followings, source: :followed #フォローされる側
+  has_many :following_users, through: :followeds, source: :following # フォローする側
+  has_many :followed_users, through: :followings, source: :followed # フォローされる側
 end

@@ -10,17 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_20_055447) do
-
-  create_table "follows", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "followed_id"
-    t.integer "following_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["followed_id", "following_id"], name: "index_follows_on_followed_id_and_following_id", unique: true
-    t.index ["followed_id"], name: "index_follows_on_followed_id"
-    t.index ["following_id"], name: "index_follows_on_following_id"
-  end
+ActiveRecord::Schema.define(version: 2022_01_21_045316) do
 
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "kibun", null: false

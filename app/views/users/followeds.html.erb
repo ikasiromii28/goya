@@ -1,0 +1,11 @@
+<h1><%= t("title.followeds") %></h1>
+
+<table>
+  <% @followeds.each do |user| %>
+    <tr>
+      <td><%= link_to user.nickname, user_path(user) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to t("button.back"), user_path %>

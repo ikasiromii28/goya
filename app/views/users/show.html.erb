@@ -1,23 +1,33 @@
 <div class="contents row">
-  <%= @nickname %>さんの投稿一覧
-  <% @posts.each do |post| %>
-    <%# <%= render "calendars/main" %>
-  <% end %>
-  <div class="m-50">
-    <p>
+  <%= @nickname %>さんのマイページ
+  <div class="follow">
       <% if current_user != @user %>
         <% if relationship = Relationship.find_by(followed_id: @user.id, following_id: current_user.id) %>
-          <%= link_to 'Unfollow', user_relationship_path(@user, relationship), method: :delete, class: "btn-sm btn-danger" %>
+          <%= link_to 'Unfollow', user_relationship_path(@user, relationship), method: :delete %>
         <% else %>
           <%= link_to 'Follow', user_relationships_path(@user), method: :post %>
         <% end %>
+      <% else %>
+        <%= link_to 'ユーザー情報の編集', edit_user_path(@user) %>
       <% end %>
-    </p>
   </div>
   <p>
-    <%= link_to "#{@user.followeds.count} #{User.human_attribute_name("人をフォローしています（Following）")}", followings_user_path %>
+    <%= link_to "#{@user.followeds.count} #{User.human_attribute_name("人をフォローしています（Following/フォロー中）")}", followings_user_path %>
   </p>
   <p>
-    <%= link_to "#{@user.followings.count} #{User.human_attribute_name("人にフォローされています（Followed）")}", followeds_user_path %>
+    <%= link_to "#{@user.followings.count} #{User.human_attribute_name("人にフォローされています（Followed/フォロワー）")}", followeds_user_path %>
   </p>
+  <div class="count">
+    これまでの投稿数：<%= @posts.count %>
+  </div>
+  <div class='calendar'>
+    <% @posts.each do |post| %>
+      <li class='user-post-list'>
+        <%= post.user.nickname %>
+        <%= post.date %>
+        <%= post.kibun %>
+        <%= post.created_at %>
+      </li>
+    <% end %>
+  </div>
 </div>

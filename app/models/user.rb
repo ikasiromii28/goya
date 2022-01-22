@@ -12,7 +12,6 @@ class User < ApplicationRecord
   has_many :room_users
   has_many :rooms, through: :room_users
 
-  # has_many :relationships
   has_many :followeds,
            class_name: 'Relationship',
            foreign_key: 'followed_id',

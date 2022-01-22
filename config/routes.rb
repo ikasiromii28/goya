@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   root 'calendars#index'
   #root to:"rooms#index"
   resources :calendars
-  resources :rooms, only: [:new, :create]
+  resources :rooms, only: [:new, :create] do
+    resources :messages, only: [:index, :create]
+  end
   resources :users, except: :create do
     resources :relationships, only: [:create, :destroy]
     member do

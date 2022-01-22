@@ -1,4 +1,9 @@
 class RoomsController < ApplicationController
+  def index
+    @room = Room.new
+    @message = Message.new
+  end
+
   def new
     @room = Room.new
   end

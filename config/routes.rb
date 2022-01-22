@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'calendars#index'
-  #root to:"rooms#index"
   resources :calendars
   resources :rooms, only: [:new, :create]
   resources :users, except: :create do

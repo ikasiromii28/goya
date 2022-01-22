@@ -4,13 +4,7 @@ class UsersController < ApplicationController
   def show
     @nickname = @user.nickname
     @posts = @user.posts
-    get_week
-
-    @followed_users = []
-    # current_user.relationships.each do |relationship|
-    #   followed_user = User.find(relationship.followed.id)
-    #   @followed_users<<followed_user
-    # end
+    # get_week
   end
 
   def followings
@@ -30,12 +24,12 @@ class UsersController < ApplicationController
   def get_week
     wdays = ['(日)', '(月)', '(火)', '(水)', '(木)', '(金)', '(土)']
 
-    @todays_date = Date.today - 27
+    @todays_date = Date.today - 366
     @week_days = []
 
-    posts = Post.where(date: @todays_date..@todays_date + 27)
+    posts = Post.where(date: @todays_date..@todays_date + 366)
 
-    28.times do |x|
+    367.times do |x|
       today_posts = []
       posts.each do |post|
         today_posts.push(post.kibun) if post.date == @todays_date + x

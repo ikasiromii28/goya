@@ -27,7 +27,7 @@
           <ul class='content'>
           <% if day[:posts].length != 0 %>
             <% day[:posts].each do |post| %>
-              <li class='post-list'><%= post %></li>
+              <li class='post-list'><%= post.kibun%></li>
             <% end %>
           <% end %>
           </ul>

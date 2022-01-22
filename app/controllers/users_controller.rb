@@ -4,7 +4,7 @@ class UsersController < ApplicationController
   def show
     @nickname = @user.nickname
     @posts = @user.posts
-    # get_week
+    get_week
   end
 
   def followings
@@ -27,12 +27,12 @@ class UsersController < ApplicationController
     @todays_date = Date.today - 366
     @week_days = []
 
-    posts = Post.where(date: @todays_date..@todays_date + 366)
+    posts = Post.where(date: @todays_date..@todays_date + 366, user_id: @user)
 
     367.times do |x|
       today_posts = []
       posts.each do |post|
-        today_posts.push(post.kibun) if post.date == @todays_date + x
+        today_posts.push(post) if post.date == @todays_date + x
       end
       wday_num = Date.today.wday
       wday_num -= 7 if wday_num > 7

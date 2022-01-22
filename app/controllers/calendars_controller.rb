@@ -33,7 +33,7 @@ class CalendarsController < ApplicationController
     28.times do |x|
       today_posts = []
       posts.each do |post|
-        today_posts.push(post.kibun) if post.date == @todays_date + x
+        today_posts.push(post) if post.date == @todays_date + x
       end
       wday_num = Date.today.wday
       wday_num -= 7 if wday_num > 7

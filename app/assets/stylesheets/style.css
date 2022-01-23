@@ -869,24 +869,50 @@ footer p {
   width: 30vw;
   height: auto;
 }
+/* ヘッダー */
 .left-header {
   height: 100px;
   padding: 0 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: yellowgreen;
 }
-
-.left-lists {
-  height: calc(100vh - 100px);
-  padding: 0 15px;
-}
-
-.room {
+/* ボタン部品 */
+.user-nickname {
+  font-size: 20px;
+  color: #666;
   text-decoration: none;
 }
+
+.user-signout-btn {
+  font-size: 15px;
+  border: 1px solid darkolivegreen;
+  color: #666;
+  text-decoration: none;
+  padding: 15px;
+}
+
+.user-signin-btn,.user-signup-btn {
+  font-size: 15px;
+  border: 1px solid darkolivegreen;
+  color: #666;
+  text-decoration: none;
+  padding: 15px;
+}
+.left-lists {
+  background-color: wheat;
+  height: calc(100vh - 100px);
+  padding: 0 15px;
+  overflow: scroll;
+}
+
+.room, .follow-num, .info, .info2 {
+  padding: 20px 0 40px;
+}
 .room-name {
-  font-size: large;
+  text-decoration: none;
+  color: darkolivegreen;
 }
 
 /* main */

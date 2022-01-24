@@ -14,19 +14,19 @@
 
     <div class="wrapper">  
       <div class="left-bar">
-      <%= render'layouts/sidebar' %>
-    </div>
+        <%= render'layouts/sidebar' %>
+      </div>
 
-    <div class="main">
-      <div class="container">
-        <%= yield %>
+      <div class="main">
+        <div class="container">
+          <%= yield %>
+        </div>
+        <footer>
+          <p>
+            Copyright Go-Ya 2022.
+          </p>
+        </footer>
       </div>
     </div>
-    
-    <footer>
-      <p>
-        Copyright Go-Ya 2022.
-      </p>
-    </footer>
   </body>
 </html>

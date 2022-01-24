@@ -1,46 +1,46 @@
 <div class="left-header">
-  <div class="header__bar row">
-    <h1 class="grid-6"><a href="/">Go-Ya</a></h1>
-  </div>
+  <h1 class="grid-6"><a href="/">Go-Ya</a></h1>
 </div>
+
 <div class="left-lists">
   <% if user_signed_in? %>
-    <div class="user_nav grid-6">
-      <span><%= current_user.nickname %>
-        <ul class="user__info">
-          <li>
-            <%= link_to "マイページ", "/users/#{current_user.id}" %>
-            <%= link_to "ルームを作成する", new_room_path %>
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-          </li>
-        </ul>
-      </span>
-    </div>
-    <div class="follow-num">
-      <p>フォロー○人</p>
-      <%#= link_to "#{@user.followeds.count} #{User.human_attribute_name("人をフォローしています（Following/フォロー中）")}", followings_user_path %>
-      <p>フォロワー○人</p>
-      <%#= link_to "#{@user.followings.count} #{User.human_attribute_name("人にフォローされています（Followed/フォロワー）")}", followeds_user_path %>
-    </div>
     <div class="info">
-      <%# <%= link_to "マイページ", "/users/#{current_user.id}" %>
+      <p><%= current_user.nickname %>さん、おかえりなさい！</p>
+      <p><%= link_to "マイページ", "/users/#{current_user.id}" %></p>
+      <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
     </div>
+
+    <div class="follow-num">
+      <p>
+        フォロー：111人
+        <%# <%= link_to "フォロー：#{@user.followings.count}人", followeds_user_path %>
+      </p>
+      <p>
+      フォロワー：11人
+        <%# <%= link_to "フォロワー：#{@user.followeds.count}人", followings_user_path %>
+      </p>
+    </div>
+
     <div class="info2">
       <%= link_to "ルームを作成する", new_room_path %>
     </div>
+
     <div class="rooms">
-    <p>* 参加中のチャットルーム *</p>
-    <% current_user.rooms.each do |room| %>
-      <div class="room">
-        <div class="room-name">
-          <%= link_to room.name, room_messages_path(room) %>
+      <p>* 参加中のチャットルーム *</p>
+      <% current_user.rooms.each do |room| %>
+        <div class="room">
+          <div class="room-name">
+            <%= link_to room.name, room_messages_path(room) %>
+          </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
+
   <% else %>
     <div class="user-signin-btn">
       <%= link_to "ログイン", new_user_session_path, class: "post" %>
     </div>
+
     <div class="user-signup-btn">
       <%= link_to "新規登録", new_user_registration_path, class: "post" %>
     </div>

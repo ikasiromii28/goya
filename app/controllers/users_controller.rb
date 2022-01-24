@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def show
     @nickname = @user.nickname
-    @posts = @user.posts.all.order(id: "ASC")
+    @posts = @user.posts.all.order(id: 'ASC')
   end
 
   def followings

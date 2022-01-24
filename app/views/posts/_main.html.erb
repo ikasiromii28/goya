@@ -2,7 +2,7 @@
   <div class="container">
     <div class="kimochi">
       <h3>今日の気持ち</h3>
-      <%= form_with(model: @post, url: calendars_path, local: true) do |f| %>
+      <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
         <%= f.date_field :date, class: 'select' %>
         <%= f.radio_button :kibun, :優 %>
         <%= f.label :kibun, "優", {value: :優, style: "display: inline-block;"} %>
@@ -15,7 +15,7 @@
         <%= f.submit "投稿" %>
       <% end %>
     </div>
-    <div class='calendar'>
+    <div class='post'>
       <% @week_days.each do |day| %>
         <div class='item'>
           <div class='date'>

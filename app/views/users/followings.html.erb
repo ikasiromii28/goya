@@ -1,16 +1,18 @@
-<h1><%= t("title.followings") %></h1>
-
-<table>
-  <% @followings.each do |user| %>
-    <tr>
-      <td>
-        <% if user.icon.attached? %>
-          <%= image_tag user.icon.variant(resize_to_limit: [30, 30]) %>
-        <% end %>
-      </td>
-      <td><%= link_to user.nickname, user_path(user) %></td>
-    </tr>
-  <% end %>
-</table>
-
-<%= link_to t("button.back"), user_path %>
+<div class="contents row">
+  <div class="container">
+    <h1><%= t("title.フォロワー") %></h1>
+    <table>
+      <% @followings.each do |user| %>
+        <tr>
+          <td>
+            <% if user.icon.attached? %>
+              <%= image_tag user.icon.variant(resize_to_limit: [30, 30]) %>
+            <% end %>
+          </td>
+          <td><%= link_to user.nickname, user_path(user) %></td>
+        </tr>
+      <% end %>
+    </table>
+    <%= link_to t("button.back"), user_path %>
+  </div>
+</div>

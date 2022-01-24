@@ -1,6 +1,7 @@
 <div class="contents row">
   <div class="container">
     <%= @nickname %>さんのマイページ
+
     <div class="follow">
         <% if current_user != @user %>
           <% if relationship = Relationship.find_by(followed_id: @user.id, following_id: current_user.id) %>
@@ -12,17 +13,26 @@
           <%= link_to 'ユーザー情報の編集', edit_user_path(@user) %>
         <% end %>
     </div>
-    <p>
-      <%= link_to "#{@user.followings.count} #{User.human_attribute_name("人をフォローしています（Following/フォロー中）")}", followeds_user_path %>
-    </p>
-    <p>
-      <%= link_to "#{@user.followeds.count} #{User.human_attribute_name("人にフォローされています（Followed/フォロワー）")}", followings_user_path %>
-    </p>
-    <div class="count">
-      これまでの投稿数：<%= @posts.count %>
-    </div>
 
-    <div class='calendar'>
+    <div class="count">
+      <p>
+        <%= link_to "フォロー：#{@user.followings.count}人", followeds_user_path %>
+      </p>
+      <p>
+        <%= link_to "フォロワー: #{@user.followeds.count}人", followings_user_path %>
+      </p>
+      <p>
+        投稿数：<%= @posts.count %>
+      </p>
+    </div>
+    <div class="sort">
+      <% unless params[:sort_update] %>
+        <%= link_to '投稿日でソートする', user_path(sort_update: "false") %>
+      <% else %>
+        <%= link_to '更新日時でソートする', user_path(@user) %>
+      <% end%>
+    </div>
+    <div class='post'>
       <% if @posts.present? %>
         <% @posts.each do |post| %>
           <div class='item'>
@@ -30,10 +40,10 @@
               <%= post.date.strftime("%Y/%m/%d") %>
             </div>
             <ul class='content'>
-                  <li class='post-list'>
-                    <%= post.kibun %>
-                    （投稿日：<%= post.created_at.strftime("%Y/%m/%d %H:%M") %>）
-                  </li>
+              <li class='post-list'>
+                <%= post.kibun %>
+                （投稿日：<%= post.created_at.strftime("%Y/%m/%d %H:%M") %>）
+              </li>
             </ul>
           </div>
         <% end %>

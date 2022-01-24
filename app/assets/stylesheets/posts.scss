@@ -1,8 +1,4 @@
-// Place all the styles related to the calendars controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-.calendar {
+.post {
   width: 100%;
   margin-top: 30px;
   display: flex;
@@ -24,14 +20,8 @@
   display: flex;
   font-size: 3vh;
   align-items: center;
-  // justify-content: center;
   padding-left: 5vh;
   border-bottom: 1px solid rgb(235, 235, 177);
-}
-
-.count {
-  font-size: 2vh;
-  padding-left: 10px;
 }
 
 .content {
@@ -68,4 +58,9 @@
   width: 15vw;
   margin: 5px 5px;
   text-align: center
+}
+
+.sort {
+  display: flex;
+  margin: 5px 5px;
 }

@@ -3,4 +3,6 @@ class Post < ApplicationRecord
   validates :date, presence: true
 
   belongs_to :user
+
+  scope :by_recently_created, -> { order(created_at: :asc) }
 end

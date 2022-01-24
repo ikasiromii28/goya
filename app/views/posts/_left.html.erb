@@ -6,15 +6,6 @@
     <div class="user-signout-btn">
       <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     </div>
-  <% else %>
-    <div class="user-signin-btn">
-      <%= link_to "ログイン", new_user_session_path, class: "post" %>
-    </div>
-    <div class="user-signup-btn">
-      <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-    </div>
-  <% end %>
-</div>
 <div class="left-lists">
   <div class="follow-num">
     <p>フォロー○人</p>
@@ -23,7 +14,7 @@
     <%#= link_to "#{@user.followings.count} #{User.human_attribute_name("人にフォローされています（Followed/フォロワー）")}", followeds_user_path %>
   </div>
   <div class="info">
-    <%= link_to "マイページ", "/users/#{current_user.id}" %>
+    <%# <%= link_to "マイページ", "/users/#{current_user.id}" %> %>
   </div>
   <div class="info2">
     <%= link_to "ルームを作成する", new_room_path %>
@@ -37,5 +28,15 @@
       </div>
     </div>
   <% end %>
+
+  <% else %>
+    <div class="user-signin-btn">
+      <%= link_to "ログイン", new_user_session_path, class: "post" %>
+    </div>
+    <div class="user-signup-btn">
+      <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+    </div>
+  <% end %>
+</div>
 </div>
 </div>

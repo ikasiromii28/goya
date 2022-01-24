@@ -3,8 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @nickname = @user.nickname
-    @posts = @user.posts
-    get_week
+    @posts_count = Post.count
+    @posts = @user.posts.all.order(id: "ASC")
   end
 
   def followings
@@ -19,25 +19,5 @@ class UsersController < ApplicationController
 
   def set_user
     @user = User.find(params[:id])
-  end
-
-  def get_week
-    wdays = ['(日)', '(月)', '(火)', '(水)', '(木)', '(金)', '(土)']
-
-    @todays_date = Date.today - 366
-    @week_days = []
-
-    posts = Post.where(date: @todays_date..@todays_date + 366, user_id: @user)
-
-    367.times do |x|
-      today_posts = []
-      posts.each do |post|
-        today_posts.push(post) if post.date == @todays_date + x
-      end
-      wday_num = Date.today.wday
-      wday_num -= 7 if wday_num > 7
-      days = { month: (@todays_date + x).month, date: (@todays_date + x).day, wday: (wdays[wday_num]), posts: today_posts }
-      @week_days.push(days)
-    end
   end
 end

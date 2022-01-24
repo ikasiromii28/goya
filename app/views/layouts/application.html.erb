@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Goya</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
@@ -10,31 +9,20 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="header__bar row">
-        <h1 class="grid-6"><a href="/">Go-Ya</a></h1>
-        <% if user_signed_in? %>
-        <div class="user_nav grid-6">
-          <span><%= current_user.nickname %>
-            <ul class="user__info">
-              <li>
-                <%= link_to "マイページ", "/users/#{current_user.id}" %>
-                <%= link_to "ルームを作成する", new_room_path %>
-                <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-              </li>
-            </ul>
-          </span>
-        </div>
-      <% else %>
-        <div class="grid-6">
-          <%= link_to "ログイン", new_user_session_path, class: "post" %>
-          <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-        </div>
-      <% end %>
-        </div>
-      </div>
+    <header>
     </header>
-    <%= yield %>
+
+    <div class="wrapper">  
+      <div class="left-bar">
+      <%= render'layouts/sidebar' %>
+    </div>
+
+    <div class="main">
+      <div class="container">
+        <%= yield %>
+      </div>
+    </div>
+    
     <footer>
       <p>
         Copyright Go-Ya 2022.

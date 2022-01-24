@@ -1,0 +1,6 @@
+<div class='sort'>
+  <%= form_with model: @post, url: search_posts_path, method: :get, local: true do |f| %>
+    <%= f.select :keyword, [ ['投稿日が新しい順', 'new'], ['投稿日が古い順', 'old'],['気分の投稿びが新しい順','date-new'],['気分の投稿びが古い順','date-old']] %>
+    <%= f.submit %>
+  <% end %>
+</div>

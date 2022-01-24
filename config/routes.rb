@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'calendars#index'
-  resources :calendars do
-    resources :posts, only: [:create, :destroy] do
-      collection do
-        get 'search'
-      end
+  root 'posts#index'
+  resources :posts, only: [:create, :destroy] do
+    collection do
+      get 'search'
     end
   end
   resources :rooms, only: [:index, :new, :create, :destroy] do
@@ -14,7 +12,7 @@ Rails.application.routes.draw do
   resources :users, except: :create do
     resources :relationships, only: [:create, :destroy]
     member do
-    get :followings, :followeds
+      get :followings, :followeds
     end
   end
 end

@@ -25,7 +25,25 @@
         投稿数：<%= @posts.count %>
       </p>
     </div>
-    <%= render 'posts/select' %>
-    <%= render 'posts/result' %>
+    <%= link_to '更新日時でソートする', user_path(sort_update: "true") %>
+    <div class='post'>
+      <% if @posts.present? %>
+        <% @posts.each do |post| %>
+          <div class='item'>
+            <div class='date'>
+              <%= post.date.strftime("%Y/%m/%d") %>
+            </div>
+            <ul class='content'>
+              <li class='post-list'>
+                <%= post.kibun %>
+                （投稿日：<%= post.created_at.strftime("%Y/%m/%d %H:%M") %>）
+              </li>
+            </ul>
+          </div>
+        <% end %>
+      <% else %>
+        投稿がありません
+      <% end %>
+    </div>
   </div>
 </div>

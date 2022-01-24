@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(version: 2022_01_22_062918) do
   create_table "posts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "kibun", null: false
     t.date "date", null: false
+    t.string "option"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"

@@ -3,7 +3,11 @@ class UsersController < ApplicationController
 
   def show
     @nickname = @user.nickname
-    @posts = @user.posts.all.order(id: 'ASC')
+    if params[:option]
+      @posts = @user.posts.by_recently_created
+    else
+      @posts = @user.posts.all.order(date: 'ASC')
+    end
   end
 
   def followings

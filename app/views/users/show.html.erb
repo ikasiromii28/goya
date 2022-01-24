@@ -13,10 +13,10 @@
         <% end %>
     </div>
     <p>
-      <%= link_to "#{@user.followings.count} #{User.human_attribute_name("人をフォローしています（Following/フォロー中）")}", followeds_user_path %>
+      <%= link_to "フォロー：#{@user.followings.count}人", followeds_user_path %>
     </p>
     <p>
-      <%= link_to "#{@user.followeds.count} #{User.human_attribute_name("人にフォローされています（Followed/フォロワー）")}", followings_user_path %>
+      <%= link_to "フォロワー: #{@user.followeds.count}人", followings_user_path %>
     </p>
     <div class="count">
       これまでの投稿数：<%= @posts.count %>

@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   def show
     @nickname = @user.nickname
     @posts = @user.posts.all.order(id: "ASC")
-    @posts_count = @posts.count
   end
 
   def followings

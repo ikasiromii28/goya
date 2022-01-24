@@ -19,7 +19,7 @@
       <%= link_to "#{@user.followeds.count} #{User.human_attribute_name("人にフォローされています（Followed/フォロワー）")}", followings_user_path %>
     </p>
     <div class="count">
-      これまでの投稿数：<%= @posts_count %>
+      これまでの投稿数：<%= @posts.count %>
     </div>
 
     <div class='calendar'>

@@ -4,7 +4,6 @@ class CalendarsController < ApplicationController
   def index
     get_week
     @post = Post.new
-    @posts_count = Post.count
   end
 
   def create

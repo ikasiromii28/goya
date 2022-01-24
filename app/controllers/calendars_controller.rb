@@ -24,12 +24,12 @@ class CalendarsController < ApplicationController
   def get_week
     wdays = ['(日)', '(月)', '(火)', '(水)', '(木)', '(金)', '(土)']
 
-    @todays_date = Date.today - 27
+    @todays_date = Date.today - 6
     @week_days = []
 
-    posts = Post.where(date: @todays_date..@todays_date + 27)
+    posts = Post.where(date: @todays_date..@todays_date + 6)
 
-    28.times do |x|
+    7.times do |x|
       today_posts = []
       posts.each do |post|
         today_posts.push(post) if post.date == @todays_date + x

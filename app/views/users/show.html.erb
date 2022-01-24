@@ -25,7 +25,13 @@
         投稿数：<%= @posts.count %>
       </p>
     </div>
-    <%= link_to '更新日時でソートする', user_path(sort_update: "true") %>
+    <div class="sort">
+      <% unless params[:sort_update] %>
+        <%= link_to '投稿日でソートする', user_path(sort_update: "false") %>
+      <% else %>
+        <%= link_to '更新日時でソートする', user_path(@user) %>
+      <% end%>
+    </div>
     <div class='post'>
       <% if @posts.present? %>
         <% @posts.each do |post| %>

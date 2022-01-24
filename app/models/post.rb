@@ -4,16 +4,5 @@ class Post < ApplicationRecord
 
   belongs_to :user
 
-  def self.sort(selection)
-    case selection
-    when 'new'
-      all.order(created_at: :DESC)
-    when 'old'
-      all.order(created_at: :ASC)
-    when 'date-new'
-      all.order(date: :DESC)
-    when 'date-old'
-      all.order(date: :ASC)
-    end
-  end
+  scope :by_recently_created, -> {order(created_at: :desc)}
 end

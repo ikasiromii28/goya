@@ -3,7 +3,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
     create_table :posts do |t|
       t.string :kibun, null: false
       t.date :date, null: false
-      t.string :option
       t.timestamps
     end
   end

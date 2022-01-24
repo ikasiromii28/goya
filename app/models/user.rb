@@ -23,6 +23,4 @@ class User < ApplicationRecord
            inverse_of: :following
   has_many :following_users, through: :followeds, source: :following # フォローする側
   has_many :followed_users, through: :followings, source: :followed # フォローされる側
-
-  scope :by_recently_created, -> {order(created_at: :desc)}
 end

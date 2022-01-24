@@ -25,11 +25,13 @@
             </div>
           </div>
           <ul class='content'>
-          <% if day[:posts].length != 0 %>
-            <% day[:posts].each do |post| %>
-              <li class='post-list'><%= post %></li>
+            <% if day[:posts].length != 0 %>
+              <% day[:posts].each do |post| %>
+                <li class='post-list'>
+                  <%= post.kibun%>
+                </li>
+              <% end %>
             <% end %>
-          <% end %>
           </ul>
         </div>
       <% end %>

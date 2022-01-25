@@ -139,6 +139,9 @@ ja:
       not_found: は見つかりませんでした。
       not_locked: はロックされていません。
       blank: は入力されていません
+      confirmation: が一致しません
+      too_long: が長すぎます
+      too_short: が短すぎます
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"

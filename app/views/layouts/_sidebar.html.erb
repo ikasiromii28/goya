@@ -5,44 +5,41 @@
 <div class="left-lists">
   <% if user_signed_in? %>
     <div class="info">
-      <p><%= current_user.nickname %>さん、おかえりなさい！</p>
-      <p><%= link_to "マイページ", "/users/#{current_user.id}" %></p>
-      <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></p>
+      <%= current_user.nickname %>さん、おかえりなさい！
     </div>
-
-    <div class="follow-num">
+    <div class="info">
       <p>
-        フォロー：111人
-        <%# <%= link_to "フォロー：#{@user.followings.count}人", followeds_user_path %>
+        <%= link_to "マイページ", "/users/#{current_user.id}" %>
       </p>
       <p>
-      フォロワー：11人
-        <%# <%= link_to "フォロワー：#{@user.followeds.count}人", followings_user_path %>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
       </p>
     </div>
 
-    <div class="info2">
+    <div class="info">
       <%= link_to "ルームを作成する", new_room_path %>
     </div>
-
-    <div class="rooms">
-      <p>* 参加中のチャットルーム *</p>
-      <% current_user.rooms.each do |room| %>
-        <div class="room">
-          <div class="room-name">
-            <%= link_to room.name, room_messages_path(room) %>
-          </div>
-        </div>
-      <% end %>
+    <div class="info">
+      <%= link_to "* 参加中のチャットルーム *", rooms_path %>
+      <div class="rooms">
+        <% if current_user.rooms.present? %>
+            <% current_user.rooms.each do |room| %>
+              <div class="room">
+                <div class="room-name">
+                  <%= link_to room.name, room_messages_path(room) %>
+                </div>
+              </div>
+            <% end %>
+        <% else %>
+          <p>
+            現在参加中のチャットルームはありません
+          </p>
+        <% end %>
+      </div>
     </div>
 
   <% else %>
-    <div class="user-signin-btn">
       <%= link_to "ログイン", new_user_session_path, class: "post" %>
-    </div>
-
-    <div class="user-signup-btn">
       <%= link_to "新規登録", new_user_registration_path, class: "post" %>
-    </div>
   <% end %>
 </div>

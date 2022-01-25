@@ -60,7 +60,12 @@
   text-align: center
 }
 
-.sort {
+.right {
   display: flex;
   margin: 5px 5px;
+  margin-left: 10px;
+  font-size: 90%;
+  color: darkolivegreen;
+  display: flex;
+  flex-direction: column;
 }

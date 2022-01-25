@@ -7,15 +7,19 @@
 </div>
 
 <div class="info2">
-    <% if current_user != @user %>
-      <% if relationship = Relationship.find_by(followed_id: @user.id, following_id: current_user.id) %>
-        <%= link_to 'Unfollow', user_relationship_path(@user, relationship), method: :delete %>
-      <% else %>
-        <%= link_to 'Follow', user_relationships_path(@user), method: :post %>
-      <% end %>
+  <% if current_user != @user %>
+    <% if relationship = Relationship.find_by(followed_id: @user.id, following_id: current_user.id) %>
+      <%= link_to 'Unfollow', user_relationship_path(@user, relationship), method: :delete %>
     <% else %>
-      <%= link_to 'ユーザー情報の編集', edit_user_path(@user) %>
+      <%= link_to 'Follow', user_relationships_path(@user), method: :post %>
     <% end %>
+  <% end %>
+</div>
+
+<div class="right">
+  <% if current_user == @user %>
+    <%= link_to 'ユーザー情報の編集', edit_user_path(@user) %>
+  <% end %>
 </div>
 
 <div class="count">
@@ -30,7 +34,7 @@
   </p>
 </div>
 
-<div class="sort">
+<div class="right">
   <% unless params[:sort_update] %>
     <%= link_to '投稿日でソートする', user_path(sort_update: "false") %>
   <% else %>

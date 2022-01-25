@@ -26,7 +26,7 @@ class User < ApplicationRecord
   has_many :followed_users, through: :followings, source: :followed # フォローされる側
 
   def self.search(search)
-    if search != ""
+    if search != ''
       User.where('email LIKE(?)', "%#{search}%")
     else
       User.all

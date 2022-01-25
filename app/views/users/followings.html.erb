@@ -1,11 +1,9 @@
 <h1>フォロワーリスト</h1>
 
-<table>
+<div class="list">
   <% @followings.each do |user| %>
-    <tr>
-      <td><%= link_to user.nickname, user_path(user) %></td>
-    </tr>
+    <%= link_to user.nickname, user_path(user) %>
   <% end %>
-</table>
+</div>
 
 <%= link_to t("button.back"), user_path %>

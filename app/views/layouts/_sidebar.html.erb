@@ -8,18 +8,11 @@
       <%= current_user.nickname %>さん、おかえりなさい！
     </div>
     <div class="info">
-      <div class="info2">
-        <p>
-          <%= link_to "マイページ", "/users/#{current_user.id}" %>
-        </p>
-        <p>
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </p>
-      </div>
+      <%= link_to "マイページ", "/users/#{current_user.id}" %> / <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     </div>
 
     <div class="info">
-      <%= link_to "ユーザー一覧", users_path %>
+      <%= link_to "ユーザーリスト", users_path %>
     </div>
 
     <div class="info">

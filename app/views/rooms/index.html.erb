@@ -8,6 +8,7 @@
       <%= link_to room.name, room_messages_path(room) %>
     <% end %>
   <% else %>
-    現在参加中のチャットルームはありません
+    現在参加中のチャットルームはありません。
+    <%= link_to "チャットルームを作成する", new_room_path %>
   <% end %>
 </div>

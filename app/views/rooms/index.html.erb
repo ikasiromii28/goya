@@ -4,16 +4,10 @@
 
 <div class="info2">
   <% if current_user.rooms.present? %>
-      <% current_user.rooms.each do |room| %>
-        <div class="room">
-          <div class="room-name">
-            <%= link_to room.name, room_messages_path(room) %>
-          </div>
-        </div>
-      <% end %>
+    <% current_user.rooms.each do |room| %>
+      <%= link_to room.name, room_messages_path(room) %>
+    <% end %>
   <% else %>
-    <p>
-      現在参加中のチャットルームはありません
-    </p>
+    現在参加中のチャットルームはありません
   <% end %>
 </div>

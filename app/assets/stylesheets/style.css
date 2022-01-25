@@ -367,7 +367,7 @@ embed {
   height: 100%;
 }
 
-.left {
+.sidebar {
   float: left;
 }
 
@@ -641,10 +641,6 @@ html {
   background-color: #f5f5f3;
 }
 
-body {
-  padding-top: 60px;
-}
-
 h1,
 h2,
 h3,
@@ -704,23 +700,6 @@ form input[type="submit"] {
 }
 
 .btn,
-header.header div.header__bar.row div.grid-6 a.post {
-  padding: 8px 20px;
-  font-size: 14px;
-  border: 2px solid #57C3E9;
-  color: #57C3E9;
-  font-weight: bold;
-  text-align: center;
-  border-radius: 3px;
-  display: inline-block;
-}
-
-.btn:hover,
-header.header div.header__bar.row div.grid-6 a.post:hover {
-  border-color: #9bdbf2;
-  color: #9bdbf2;
-}
-
 .title {
   font-weight: bold;
 }
@@ -735,114 +714,9 @@ header.header div.header__bar.row div.grid-6 a.post:hover {
   font-size: 1.8em;
 }
 
-header.header {
-  padding: 10px;
-  border-bottom: 1px solid #D8D8D8;
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  height: 62px;
-}
-
-header.header div.header__bar.row {
-  position: relative;
-}
-
-header.header div.header__bar.row h1.grid-6 {
-  font-size: 20px;
-  line-height: 41px;
-  float: left;
-}
-
-header.header div.header__bar.row h1.grid-6 a {
-  display: block;
-}
-
-header.header div.header__bar.row div.grid-6 {
-  float: right;
-  text-align: right;
-}
-
-header.header div.header__bar.row div.grid-6 a.post {
-  width: 120px;
-  display: inline-left;
-  margin-left: 10px;
-}
-
-header.header .user_nav {
-  position: relative;
-  height: 100px;
-  right: 0;
-}
-
-header.header .user_nav span {
-  top: 5px;
-  display: block;
-  float: left;
-  margin-left: 30px;
-  width: 150px;
-  height: 50px;
-  font-size: 1em;
-  cursor: pointer;
-  position: relative;
-}
-
-header.header .user_nav span:after {
-  content: '▼';
-  font-size: .7em;
-  margin-left: -4px;
-}
-
-header.header .user_nav span:hover ul {
-  color: #57C3E9;
-  display: block;
-}
-
-header.header .user_nav ul {
-  display: none;
-  position: absolute;
-  top: 46px;
-  right: 0;
-  border-left: 1px solid #d8d8d8;
-  border-right: 1px solid #d8d8d8;
-  box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-header.header .user_nav ul li {
-  background-color: #f0f0f0;
-}
-
-header.header .user_nav ul li a {
-  display: block;
-  padding: 10px 20px;
-  text-align: left;
-  border-bottom: 1px solid #d8d8d8;
-}
-
 .form {
   background: url(https://dl.dropboxusercontent.com/u/5840617/DeathtoStock_Wired3.jpg);
   background-size: cover;
-}
-
-.container {
-  margin: 20px 0;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
-  background-color: white;
-  box-sizing: border-box;
-}
-
-footer {
-  margin: 30px auto;
-  padding: 10px;
-  color: #D8D8D8;
-}
-
-footer p {
-  text-align: center;
 }
 
 .search-form {
@@ -859,90 +733,77 @@ footer p {
   width: 10%;
 }
 
+/* ここから下 */
 .wrapper {
   display: flex;
 }
 
 /* left*/
 .left-bar {
-  background-color: green;
-  width: 30vw;
-  height: auto;
+  width: 300px;
+  height: 100ph;
+  background-color: rgb(174, 212, 97);
 }
-/* ヘッダー */
+
 .left-header {
   height: 100px;
   padding: 0 15px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: yellowgreen;
 }
-/* ボタン部品 */
+
+.left-lists {
+  /* background-color: wheat; */
+  height: calc(100vh - 100px);
+  padding: 0 15px;
+  overflow: scroll;
+}
+
+.title {
+  padding-bottom: 10px;
+}
+
+.info {
+  margin: 15px;
+}
+
+.info2 {
+  margin-left: 10px;
+  font-size: 95%;
+  color: darkolivegreen;
+  display: flex;
+  flex-direction: column;
+}
+
 .user-nickname {
   font-size: 20px;
   color: #666;
   text-decoration: none;
 }
 
-.user-signout-btn {
-  font-size: 15px;
-  border: 1px solid darkolivegreen;
-  color: #666;
-  text-decoration: none;
-  padding: 15px;
-}
-
-.user-signin-btn,.user-signup-btn {
-  font-size: 15px;
-  border: 1px solid darkolivegreen;
-  color: #666;
-  text-decoration: none;
-  padding: 15px;
-}
-.left-lists {
-  background-color: wheat;
-  height: calc(100vh - 100px);
-  padding: 0 15px;
-  overflow: scroll;
-}
-
-.room, .follow-num, .info, .info2 {
-  padding: 20px 0 40px;
-}
-.room-name {
-  text-decoration: none;
-  color: darkolivegreen;
-}
-
 /* main */
 .main {
   background-color: #fffac2;
-  width: calc(100vw - 30vw);
+  width: calc(100vw - 300px);
+  height: auto;
 }
-/* mainヘッダー */
-.main-header {
-  height: 100px;
-  padding: 0 40px;
-  display: flex;
-  justify-content: space-between;
+
+.container {
+  margin: 30px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(41, 41, 41, 0.2);
+  background-color: white;
+  box-sizing: border-box;
+  height: 80%;
+  overflow: scroll;
 }
-.main-title {
-  color: #f37053;
-  font-size: 24px;
-  margin-top: 36px;
+
+footer {
+  margin: 20px auto;
+  color: #D8D8D8;
 }
-.main-header-right {
-  display: flex;
-  justify-content: space-between;
-}
-.user-button {
-  margin-top: 40px;
-  margin-left: 20px;
-}
-.user-button a {
-  text-decoration: none;
-  border: 1px solid darkred;
-  color: darkred;
-  padding: 20px;
+
+footer p {
+  text-align: center;
 }

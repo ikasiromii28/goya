@@ -1,0 +1,41 @@
+<div class="left-header">
+  <h1 class="grid-6"><a href="/">Go-Ya</a></h1>
+</div>
+
+<div class="left-lists">
+  <% if user_signed_in? %>
+    <div class="info">
+      <%= current_user.nickname %>さん、おかえりなさい！
+    </div>
+    <div class="info">
+      <div class="info2">
+        <p>
+          <%= link_to "マイページ", "/users/#{current_user.id}" %>
+        </p>
+        <p>
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </p>
+      </div>
+    </div>
+
+    <div class="info">
+      <%= link_to "チャットルームを作成する", new_room_path %>
+    </div>
+    <div class="info">
+      <%= link_to "参加中のチャットルーム", rooms_path %>
+      <div class="info2">
+        <% if current_user.rooms.present? %>
+            <% current_user.rooms.each do |room| %>
+              <%= link_to room.name, room_messages_path(room) %>
+            <% end %>
+        <% else %>
+          現在参加中のチャットルームはありません
+        <% end %>
+      </div>
+    </div>
+
+  <% else %>
+      <%= link_to "ログイン", new_user_session_path, class: "post" %>
+      <%= link_to "新規登録", new_user_registration_path, class: "post" %>
+  <% end %>
+</div>

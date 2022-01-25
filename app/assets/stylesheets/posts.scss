@@ -10,7 +10,7 @@
 
 .item {
   margin: 0.5vw;
-  border: 3px solid rgb(235, 235, 177);
+  box-shadow: 0 0 10px rgb(235, 235, 177);
   width: 90%;
   height: 90px;
 }
@@ -42,7 +42,9 @@
 
 .kimochi {
   padding: 20px;
-  box-shadow: 0 0 10px rgb(235, 235, 177);
+  box-shadow: 0 0 10px rgb(9, 185, 24);
+  width: 90%;
+  height: 90px;
 }
 
 .form {
@@ -52,7 +54,6 @@
   margin-top: 15vh;
 }
 
-
 .select {
   height: 4vh;
   width: 15vw;
@@ -60,7 +61,12 @@
   text-align: center
 }
 
-.sort {
+.right {
   display: flex;
   margin: 5px 5px;
+  margin-left: 10px;
+  font-size: 90%;
+  color: darkolivegreen;
+  display: flex;
+  flex-direction: column;
 }

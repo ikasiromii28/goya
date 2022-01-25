@@ -1,55 +1,63 @@
-<div class="contents row">
-  <div class="container">
+<div class="title">
+  <% if current_user != @user %>
+    <%= @nickname %>さんのユーザーページ
+  <% else %>
     <%= @nickname %>さんのマイページ
+  <% end %>
+</div>
 
-    <div class="follow">
-        <% if current_user != @user %>
-          <% if relationship = Relationship.find_by(followed_id: @user.id, following_id: current_user.id) %>
-            <%= link_to 'Unfollow', user_relationship_path(@user, relationship), method: :delete %>
-          <% else %>
-            <%= link_to 'Follow', user_relationships_path(@user), method: :post %>
-          <% end %>
-        <% else %>
-          <%= link_to 'ユーザー情報の編集', edit_user_path(@user) %>
-        <% end %>
-    </div>
+<div class="info2">
+  <% if current_user != @user %>
+    <% if relationship = Relationship.find_by(followed_id: @user.id, following_id: current_user.id) %>
+      <%= link_to 'Unfollow', user_relationship_path(@user, relationship), method: :delete %>
+    <% else %>
+      <%= link_to 'Follow', user_relationships_path(@user), method: :post %>
+    <% end %>
+  <% end %>
+</div>
 
-    <div class="count">
-      <p>
-        <%= link_to "フォロー：#{@user.followings.count}人", followeds_user_path %>
-      </p>
-      <p>
-        <%= link_to "フォロワー: #{@user.followeds.count}人", followings_user_path %>
-      </p>
-      <p>
-        投稿数：<%= @posts.count %>
-      </p>
-    </div>
-    <div class="sort">
-      <% unless params[:sort_update] %>
-        <%= link_to '投稿日でソートする', user_path(sort_update: "false") %>
-      <% else %>
-        <%= link_to '更新日時でソートする', user_path(@user) %>
-      <% end%>
-    </div>
-    <div class='post'>
-      <% if @posts.present? %>
-        <% @posts.each do |post| %>
-          <div class='item'>
-            <div class='date'>
-              <%= post.date.strftime("%Y/%m/%d") %>
-            </div>
-            <ul class='content'>
-              <li class='post-list'>
-                <%= post.kibun %>
-                （投稿日：<%= post.created_at.strftime("%Y/%m/%d %H:%M") %>）
-              </li>
-            </ul>
-          </div>
-        <% end %>
-      <% else %>
-        投稿がありません
-      <% end %>
-    </div>
-  </div>
+<div class="right">
+  <% if current_user == @user %>
+    <%= link_to 'ユーザー情報の編集', edit_user_path(@user) %>
+  <% end %>
+</div>
+
+<div class="count">
+  <p>
+    <%= link_to "フォロー：#{@user.followings.count}人", followeds_user_path %>
+  </p>
+  <p>
+    <%= link_to "フォロワー：#{@user.followeds.count}人", followings_user_path %>
+  </p>
+  <p>
+    投稿数：<%= @posts.count %>
+  </p>
+</div>
+
+<div class="right">
+  <% unless params[:sort_update] %>
+    <%= link_to '投稿日でソートする', user_path(sort_update: "false") %>
+  <% else %>
+    <%= link_to '更新日時でソートする', user_path(@user) %>
+  <% end%>
+</div>
+
+<div class='post'>
+  <% if @posts.present? %>
+    <% @posts.each do |post| %>
+      <div class='item'>
+        <div class='date'>
+          <%= post.date.strftime("%Y/%m/%d") %>
+        </div>
+        <ul class='content'>
+          <li class='post-list'>
+            <%= post.kibun %>
+            （投稿日：<%= post.created_at.strftime("%Y/%m/%d %H:%M") %>）
+          </li>
+        </ul>
+      </div>
+    <% end %>
+  <% else %>
+    投稿がありません
+  <% end %>
 </div>

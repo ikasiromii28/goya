@@ -1,0 +1,13 @@
+<div class="title">
+  * 参加中のチャットルーム *
+</div>
+
+<div class="info2">
+  <% if current_user.rooms.present? %>
+    <% current_user.rooms.each do |room| %>
+      <%= link_to room.name, room_messages_path(room) %>
+    <% end %>
+  <% else %>
+    現在参加中のチャットルームはありません
+  <% end %>
+</div>

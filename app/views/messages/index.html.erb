@@ -22,9 +22,7 @@
 </div>
 
 <div class="messages">
-  <% @messages.each do |message|%>
   <%= render partial: 'message', collection: @messages %>
-<% end %>
 </div>
 
 <%= form_with model: [@room, @message], class: 'form', local: true do |f| %>

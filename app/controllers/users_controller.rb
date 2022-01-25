@@ -1,5 +1,13 @@
 class UsersController < ApplicationController
-  before_action :set_user
+  before_action :set_user, except: [:index]
+
+  def index
+    @users = if user_signed_in?
+      User.where.not(id: current_user.id)
+    else
+      User.all
+    end
+  end
 
   def show
     @nickname = @user.nickname

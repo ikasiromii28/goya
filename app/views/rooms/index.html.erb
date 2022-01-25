@@ -1,7 +1,8 @@
-<div class="rooms">
-  <div class="title">
-    * 参加中のチャットルーム *
-  </div>
+<div class="title">
+  * 参加中のチャットルーム *
+</div>
+
+<div class="info2">
   <% if current_user.rooms.present? %>
       <% current_user.rooms.each do |room| %>
         <div class="room">

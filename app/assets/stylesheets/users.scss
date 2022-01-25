@@ -25,3 +25,15 @@
 .right {
   margin-right: 500px;
 }
+
+.tableclass {
+  width: 100%;
+}
+
+.table {
+  width: calc(100% / 3);
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+}

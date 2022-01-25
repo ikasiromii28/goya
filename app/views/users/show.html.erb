@@ -32,29 +32,34 @@
   お誕生日：2023年01月25日
 </div>
 
-<div class="right">
-  <% unless params[:sort_update] %>
-    <%= link_to '投稿日でソートする', user_path(sort_update: "false") %>
-  <% else %>
-    <%= link_to '更新日時でソートする', user_path(@user) %>
-  <% end%>
-</div>
-
 <div class='post'>
   <% if @posts.present? %>
-    <% @posts.each do |post| %>
-      <div class='item'>
-        <div class='date'>
-          <%= post.date.strftime("%Y/%m/%d") %>
-        </div>
-        <ul class='content'>
-          <li class='post-list'>
+    <table class="tableclass">
+      <tr>
+        <th class="table">
+          <%= link_to '日付', user_path(@user) %>
+        </th>
+        <th class="table">
+          気持ち
+        </th>
+        <th class="table">
+          <%= link_to '更新日時', user_path(sort_update: "false") %>
+        </th>
+      </tr>
+      <% @posts.each do |post| %>
+        <tr>
+          <td class="table">
+            <%= post.date.strftime("%Y年%m月%d日") %>
+          </td>
+          <td class="table">
             <%= post.kibun %>
-            （投稿日：<%= post.created_at.strftime("%Y/%m/%d %H:%M") %>）
-          </li>
-        </ul>
-      </div>
-    <% end %>
+          </td>
+          <td class="table">
+            <%= post.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
   <% else %>
     投稿がありません
   <% end %>

@@ -6,6 +6,8 @@
   <% if user_signed_in? %>
     <div class="info">
       <%= current_user.nickname %>さん、おかえりなさい！
+    </div>
+    <div class="info">
       <div class="info2">
         <p>
           <%= link_to "マイページ", "/users/#{current_user.id}" %>

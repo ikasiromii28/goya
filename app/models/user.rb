@@ -24,4 +24,12 @@ class User < ApplicationRecord
            inverse_of: :following
   has_many :following_users, through: :followeds, source: :following # フォローする側
   has_many :followed_users, through: :followings, source: :followed # フォローされる側
+
+  def self.search(search)
+    if search != ''
+      User.where('email LIKE(?)', "%#{search}%")
+    else
+      User.all
+    end
+  end
 end

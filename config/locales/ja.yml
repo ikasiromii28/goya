@@ -6,3 +6,6 @@ ja:
       tweet:
         text: テキスト
         image: 画像
+  time:
+    formats:
+      default: "%Y/%m/%d %H:%M:%S"

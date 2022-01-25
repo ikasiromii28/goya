@@ -3,10 +3,10 @@ class UsersController < ApplicationController
 
   def index
     @users = if user_signed_in?
-      User.where.not(id: current_user.id)
-    else
-      User.all
-    end
+               User.where.not(id: current_user.id)
+             else
+               User.all.order(nickname: 'desc')
+             end
   end
 
   def show

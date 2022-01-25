@@ -4,6 +4,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
+    validates :nickname, length: { maximum: 6 }
   end
 
   has_many :posts, dependent: :destroy

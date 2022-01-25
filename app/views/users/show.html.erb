@@ -1,6 +1,12 @@
-<%= @nickname %>さんのマイページ
+<div class="title">
+  <% if current_user != @user %>
+    <%= @nickname %>さんのユーザーページ
+  <% else %>
+    <%= @nickname %>さんのマイページ
+  <% end %>
+</div>
 
-<div class="follow">
+<div class="info2">
     <% if current_user != @user %>
       <% if relationship = Relationship.find_by(followed_id: @user.id, following_id: current_user.id) %>
         <%= link_to 'Unfollow', user_relationship_path(@user, relationship), method: :delete %>

@@ -74,3 +74,8 @@ footer {
 footer p {
   text-align: center;
 }
+
+.edit-view {
+  justify-content: center;
+  display: flex;
+}

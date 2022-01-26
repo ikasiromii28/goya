@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :followings, :followeds]
+  before_action :set_user, except: [:index, :search]
 
   def index
     @users = if user_signed_in?
@@ -19,11 +19,9 @@ class UsersController < ApplicationController
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path
     else

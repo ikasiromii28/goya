@@ -1,0 +1,10 @@
+<div>
+  <div>
+    <h3>編集する</h3>
+    <%= form_with(model: @user, local: true) do |form| %>
+      <%= form.text_field :nickname, placeholder: "Nickname" %>
+      <%= form.text_field :email, placeholder: "email" %>
+      <%= form.submit "編集" %>
+    <% end %>
+  </div>
+</div>

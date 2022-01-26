@@ -4,6 +4,9 @@ class User < ApplicationRecord
     validates :nickname, length: { maximum: 6 }
   end
 
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  validates_format_of :password, with: PASSWORD_REGEX, message: 'が不正な値です',on: :create
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 

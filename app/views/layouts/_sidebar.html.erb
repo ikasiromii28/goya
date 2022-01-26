@@ -12,6 +12,12 @@
     </div>
 
     <div class="info">
+      <% if current_user.followings.present? %>
+        <%= link_to "タイムライン", timeline_posts_path %>
+      <% end %>
+    </div>
+
+    <div class="info">
       <%= link_to "ユーザーリスト", users_path %>
     </div>
 

@@ -18,10 +18,10 @@
 
 <div class="info">
   <p>
-    <%= link_to "フォロー：#{@user.followings.count}人", followeds_user_path %>
+    <%= link_to "フォロー：#{@user.followings.count}人", followings_user_path %>
   </p>
   <p>
-    <%= link_to "フォロワー：#{@user.followeds.count}人", followings_user_path %>
+    <%= link_to "フォロワー：#{@user.followeds.count}人", followeds_user_path %>
   </p>
   <p>
     投稿数：<%= @posts.count %>

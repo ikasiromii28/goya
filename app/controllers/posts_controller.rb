@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   end
 
   def timeline
-    @users = current_user.followings
+    @users = current_user.followed_users
     @posts = []
     if @users.present?
       @users.each do |user|

@@ -1,9 +1,15 @@
 <h1>フォロワーリスト</h1>
 
 <div class="list">
-  <% @followings.each do |user| %>
-    <%= link_to user.nickname, user_path(user) %>
+  <% if @followings.present? %>
+    <% @followings.each do |user| %>
+      <%= link_to user.nickname, user_path(user) %>
+    <% end %>
+  <% else %>
+    現在フォロワーはいません
   <% end %>
 </div>
 
-<%= link_to t("button.back"), user_path %>
+<div class="list">
+  <%= link_to t("button.back"), user_path %>
+</div>

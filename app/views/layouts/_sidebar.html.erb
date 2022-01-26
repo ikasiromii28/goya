@@ -7,6 +7,7 @@
     <div class="info">
       <%= current_user.nickname %>さん、おかえりなさい！
     </div>
+
     <div class="info">
       <%= link_to "マイページ", "/users/#{current_user.id}" %> / <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
     </div>
@@ -24,17 +25,18 @@
     <div class="info">
       <%= link_to "チャットルームを作成する", new_room_path %>
     </div>
+
     <div class="info">
       <%= link_to "参加中のチャットルーム", rooms_path %>
-      <div class="info2">
-        <% if current_user.rooms.present? %>
+        <div class="info2">
+          <% if current_user.rooms.present? %>
             <% current_user.rooms.each do |room| %>
               <%= link_to room.name, room_messages_path(room) %>
             <% end %>
-        <% else %>
-          現在参加中のチャットルームはありません
-        <% end %>
-      </div>
+          <% else %>
+            現在参加中のチャットルームはありません
+          <% end %>
+        </div>
     </div>
 
   <% else %>

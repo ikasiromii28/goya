@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @posts = if params[:sort_update]
                @user.posts.by_recently_created
              else
-               @user.posts.all.order(date: 'DESC')
+               @user.posts.all.order(date: 'desc')
              end
   end
 

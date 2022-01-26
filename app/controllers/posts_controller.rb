@@ -15,6 +15,27 @@ class PostsController < ApplicationController
     end
   end
 
+  def timeline
+    # #フォローしているユーザーと自分を取得
+    # @timeline_users = current_user.followings.all && current_user
+    # #フォローユーザーのツイートを表示
+    # @posts = @timeline_users.posts.all
+
+    @users = current_user.followeds
+    # relationship = Relationship.find_by(followed_id: @user.id, following_id: current_user.id)
+
+    @posts = []
+    if @users.present?
+      @users.each do |user|
+        following_user_posts = Post.where(user_id: user.id).order(created_at: :desc)
+        current_user_posts = Post.where(user_id: current_user.id).order(created_at: :desc)
+        #取得したユーザーの投稿一覧を@postsに格納
+        @posts.concat(following_user_posts)
+        @posts.concat(current_user_posts)
+      end
+    end
+  end
+
   private
 
   def post_params

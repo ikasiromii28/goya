@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   with_options presence: true do
-    validates :nickname
     validates :nickname, length: { maximum: 6 }
+    validates :birthday
   end
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze

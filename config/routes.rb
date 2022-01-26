@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'posts#index'
-  resources :posts, only: [:create, :destroy]
+  resources :posts, only: [:create, :destroy] do
+    collection do
+      get 'timeline'
+    end
+  end
   resources :rooms, only: [:index, :new, :create, :destroy] do
     resources :messages, only: [:index, :create]
   end

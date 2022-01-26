@@ -1,0 +1,18 @@
+<h1><%= current_user.nickname %>さんのタイムライン</h1>
+
+<div class='post'>
+  <% @posts.each do |post| %>
+    <div class='item'>
+      <div class='date'>
+        <%= post.date.strftime("%Y年%m月%d日") %>
+      </div>
+
+      <ul class='content'>
+        <li class='post-list'>
+          <%= post.user.nickname %>
+          <%= post.kibun%>
+        </li>
+      </ul>
+    </div>
+  <% end %>
+</div>

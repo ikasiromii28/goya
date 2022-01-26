@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :followings, :followeds]
+  before_action :set_user, except: [:index, :search]
 
   def index
     @users = if user_signed_in?
@@ -14,16 +14,14 @@ class UsersController < ApplicationController
     @posts = if params[:sort_update]
                @user.posts.by_recently_created
              else
-               @user.posts.all.order(date: 'DESC')
+               @user.posts.all.order(date: 'desc')
              end
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to user_path
     else
@@ -32,11 +30,11 @@ class UsersController < ApplicationController
   end
 
   def followings
-    @followings = @user.following_users
+    @followings = @user.followed_users
   end
 
   def followeds
-    @followeds = @user.followed_users
+    @followeds = @user.following_users
   end
 
   def search

@@ -6,6 +6,13 @@ ja:
       tweet:
         text: テキスト
         image: 画像
+      room:
+        user: ユーザー名
+        name: ルーム名
+      message:
+        content: 本文
+        user: ユーザー
+        room: ルーム名
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"

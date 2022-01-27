@@ -17,15 +17,11 @@ class PostsController < ApplicationController
 
   def timeline
     @users = current_user.followed_users
-    @posts = []
-    if @users.present?
-      @users.each do |user|
-        following_user_posts = Post.where(user_id: user.id).order(date: 'desc')
-        current_user_posts = Post.where(user_id: current_user.id).order(date: 'desc')
-        @posts.concat(following_user_posts)
-        @posts.concat(current_user_posts)
+    @users.each do |user|
+      @following_user_posts = Post.where(user_id: user.id).order(date: 'desc')
+      @current_user_posts = Post.where(user_id: current_user.id).order(date: 'desc')
       end
-    end
+    @posts = (@following_user_posts + @current_user_posts).sort_by {|record| record.date}.reverse!
   end
 
   private

@@ -4,46 +4,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
   flex-direction: column-reverse;
 }
 
-.item {
-  margin: 0.5vw;
-  box-shadow: 0 0 10px rgb(235, 235, 177);
-  width: 90%;
-  height: 90px;
-}
-
-.date {
-  height: 5vh;
-  display: flex;
-  font-size: 3vh;
-  align-items: center;
-  padding-left: 5vh;
-  border-bottom: 1px solid rgb(235, 235, 177);
-}
-
-.content {
-  min-height: 25vh;
-  padding: 5px;
-  white-space: nowrap;
-  overflow: scroll;
-  padding-left: 3vh;
-}
 
 .post-list {
   display: inline-flex;
-  font-size: 3vh;
   align-items: center;
   justify-content: center;
-  margin: 1vh 0;
+  margin-right: 10px;
 }
 
 .kimochi {
   padding: 20px;
   box-shadow: 0 0 10px rgb(9, 185, 24);
-  width: 90%;
+  width: 85%;
   height: 90px;
 }
 
@@ -69,4 +44,20 @@
   color: darkolivegreen;
   display: flex;
   flex-direction: column;
+}
+
+.table1 {
+  width: calc(50% / 2);
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;  
+}
+
+.table2 {
+  width: 50%;
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;  
 }

@@ -4,25 +4,25 @@
   <% if @posts.present? %>
     <table class="tableclass">
       <tr>
-        <th class="table">
+        <th class="table1">
           日付
         </th>
-        <th class="table">
+        <th class="table1">
           ユーザー名
         </th>
-        <th class="table">
+        <th class="table2">
           気持ち
         </th>
       </tr>
       <% @posts.each do |post| %>
         <tr>
-          <td class="table">
+          <td class="table1">
             <%= post.date.strftime("%Y年%m月%d日") %>
           </td>
-          <td class="table">
-            <%= post.user.nickname %>
+          <td class="table1">
+            <%= link_to post.user.nickname ,"/users/#{post.user.id}"%>
           </td>
-          <td class="table">
+          <td class="table2">
             <%= post.kibun %>
           </td>
         </tr>

@@ -1,7 +1,7 @@
 <div class='post'>
   <div class="kimochi">
     <h1>気持ち</h1>
-    <div class='index'>
+    <div class='kibun'>
       <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
         <%= f.date_field :date, class: 'select' %>
         <%= f.radio_button :kibun, :ごっつえんかんじ %>

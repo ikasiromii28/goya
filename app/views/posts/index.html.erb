@@ -17,38 +17,36 @@
 </div>
 
 <div class='post'>
-  <div class='index'>
-    <table class="tableclass">
+  <table class="tableclass">
+    <tr>
+      <th class="table1">
+        日付
+      </th>
+      <th class="table1">
+        投稿数
+      </th>
+      <th class="table2">
+        気持ち
+      </th>
+    </tr>
+    <% @week_days.reverse_each do |day| %>
       <tr>
-        <th class="table1">
-          日付
-        </th>
-        <th class="table1">
-          投稿数
-        </th>
-        <th class="table2">
-          気持ち
-        </th>
+        <td class="table1">
+          <%= day[:month] %>月<%= day[:date] %>日
+        </td>
+        <td class="table1">
+          <%= day[:posts].count %>
+        </td>
+        <td class="table2">
+          <ul>
+            <% day[:posts].each do |post| %>
+              <li class='post-list'>
+                <%= post.kibun%>
+              </li>
+            <% end %>
+          </ul>
+        </td>
       </tr>
-      <% @week_days.reverse_each do |day| %>
-        <tr>
-          <td class="table1">
-            <%= day[:month] %>月<%= day[:date] %>日
-          </td>
-          <td class="table1">
-            <%= day[:posts].count %>
-          </td>
-          <td class="table2">
-            <ul>
-              <% day[:posts].each do |post| %>
-                <li class='post-list'>
-                  <%= post.kibun%>
-                </li>
-              <% end %>
-            </ul>
-          </td>
-        </tr>
-      <% end %>
-    </table>
-  </div>
+    <% end %>
+  </table>
 </div>

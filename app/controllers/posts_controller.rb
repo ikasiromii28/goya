@@ -18,8 +18,8 @@ class PostsController < ApplicationController
   def timeline
     @users = current_user.followed_users
     @users.each do |user|
-      @following_user_posts = Post.where(user_id: user.id).order(date: 'desc')
-      @current_user_posts = Post.where(user_id: current_user.id).order(date: 'desc')
+      @following_user_posts = Post.where(user_id: user.id)
+      @current_user_posts = Post.where(user_id: current_user.id)
       end
     @posts = (@following_user_posts + @current_user_posts).sort_by {|record| record.date}.reverse!
   end

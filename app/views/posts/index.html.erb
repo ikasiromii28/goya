@@ -1,18 +1,20 @@
 <div class='post'>
   <div class="kimochi">
     <h1>気持ち</h1>
-    <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
-      <%= f.date_field :date, class: 'select' %>
-      <%= f.radio_button :kibun, :ごっつえんかんじ %>
-      <%= f.label :kibun, "ごっつえんかんじ" %>
-      <%= f.radio_button :kibun, :ええかんじ %>
-      <%= f.label :kibun, "ええかんじ" %>
-      <%= f.radio_button :kibun, :ぼちぼちでんなあ %>
-      <%= f.label :kibun, "ぼちぼちでんなあ" %>
-      <%= f.radio_button :kibun, :あかんわ %>
-      <%= f.label :kibun, "あかんわ" %>
-      <%= f.submit "投稿" %>
-    <% end %>
+    <div class='index'>
+      <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
+        <%= f.date_field :date, class: 'select' %>
+        <%= f.radio_button :kibun, :ごっつえんかんじ %>
+        <%= f.label :kibun, "ごっつえんかんじ" %>
+        <%= f.radio_button :kibun, :ええかんじ %>
+        <%= f.label :kibun, "ええかんじ" %>
+        <%= f.radio_button :kibun, :ぼちぼちでんなあ %>
+        <%= f.label :kibun, "ぼちぼちでんなあ" %>
+        <%= f.radio_button :kibun, :あかんわ %>
+        <%= f.label :kibun, "あかんわ" %>
+        <%= f.submit "投稿" %>
+      <% end %>
+    </div>
   </div>
 </div>
 

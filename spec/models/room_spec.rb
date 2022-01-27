@@ -15,7 +15,7 @@ RSpec.describe Room, type: :model do
       it "nameが空では作成できない" do
         @room.name =''
         @room.valid?
-        expect(@room.errors.full_messages).to include("Nameは入力されていません")
+        expect(@room.errors.full_messages).to include("ルーム名は入力されていません")
       end
     end
   end

@@ -1,6 +1,11 @@
 .post {
-  width: 100%;
   margin-top: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.index {
   display: flex;
   align-items: center;
   justify-content: center;

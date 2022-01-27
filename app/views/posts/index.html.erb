@@ -1,6 +1,6 @@
 <div class='post'>
   <div class="kimochi">
-    <h1>今日の気持ち</h1>
+    <h1>気持ち</h1>
     <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
       <%= f.date_field :date, class: 'select' %>
       <%= f.radio_button :kibun, :ごっつえんかんじ %>
@@ -17,21 +17,38 @@
 </div>
 
 <div class='post'>
-  <% @week_days.each do |day| %>
-    <div class='item'>
-      <div class='date'>
-        <%= day[:month] %>/<%= day[:date] %><%= day[:wday]%>
-        <div class="info">
-          気分の投稿：<%= day[:posts].count %>
-        </div>
-      </div>
-      <ul class='content'>
-        <% day[:posts].each do |post| %>
-          <li class='post-list'>
-            <%= post.kibun%>
-          </li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <div class='index'>
+    <table class="tableclass">
+      <tr>
+        <th class="table1">
+          日付
+        </th>
+        <th class="table1">
+          投稿数
+        </th>
+        <th class="table2">
+          気持ち
+        </th>
+      </tr>
+      <% @week_days.reverse_each do |day| %>
+        <tr>
+          <td class="table1">
+            <%= day[:month] %>月<%= day[:date] %>日
+          </td>
+          <td class="table1">
+            <%= day[:posts].count %>
+          </td>
+          <td class="table2">
+            <ul>
+              <% day[:posts].each do |post| %>
+                <li class='post-list'>
+                  <%= post.kibun%>
+                </li>
+              <% end %>
+            </ul>
+          </td>
+        </tr>
+      <% end %>
+    </table>
+  </div>
 </div>

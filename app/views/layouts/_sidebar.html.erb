@@ -13,7 +13,7 @@
     </div>
 
     <div class="info">
-      <% if current_user.followings.present? %>
+      <% if current_user.followeds.present? %>
         <%= link_to "タイムライン", timeline_posts_path %>
       <% end %>
     </div>

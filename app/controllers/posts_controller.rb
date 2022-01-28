@@ -17,7 +17,7 @@ class PostsController < ApplicationController
   end
 
   def timeline
-    @followings = current_user.following_users
+    @followings = current_user.followed_users
     @followings.each do |user|
       @following_user_posts = Post.where(user_id: user.id)
       @current_user_posts = Post.where(user_id: current_user.id)

@@ -27,7 +27,6 @@
   padding: 20px;
   box-shadow: 0 0 10px rgb(9, 185, 24);
   width: 85%;
-  height: 90px;
 }
 
 .form {
@@ -42,6 +41,20 @@
   width: 15vw;
   margin: 5px 5px;
   text-align: center
+}
+
+.kibun {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.post-list {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
 }
 
 .right {

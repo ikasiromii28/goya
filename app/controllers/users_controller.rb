@@ -30,11 +30,11 @@ class UsersController < ApplicationController
   end
 
   def followings
-    @followings = @user.followed_users
+    @followings = @user.following_users
   end
 
   def followeds
-    @followeds = @user.following_users
+    @followeds = @user.followed_users
   end
 
   def search

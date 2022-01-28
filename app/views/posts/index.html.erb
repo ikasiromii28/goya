@@ -5,7 +5,7 @@
       <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
       <%= render 'layouts/error_messages', model: f.object %>
         <%= f.date_field :date, class: 'select' %>
-        <%= f.radio_button :kibun, :ごっつえんかんじ %>
+        <%= f.radio_button :kibun, :ごっつええかんじ %>
         <%= f.label :kibun, "ごっつえんかんじ" %>
         <%= f.radio_button :kibun, :ええかんじ %>
         <%= f.label :kibun, "ええかんじ" %>

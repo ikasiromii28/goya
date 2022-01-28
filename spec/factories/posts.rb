@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :post do
-    kibun   { 'ごっつえんかんじ'}
+    kibun   { 'ごっつええかんじ'}
     date   { 2000-01-01 }
     association :user
   end

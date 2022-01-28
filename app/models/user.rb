@@ -19,12 +19,12 @@ class User < ApplicationRecord
            class_name: 'Relationship',
            foreign_key: 'followed_id',
            dependent: :destroy,
-           inverse_of: :followed
+           inverse_of: :following
   has_many :followings,
            class_name: 'Relationship',
            foreign_key: 'following_id',
            dependent: :destroy,
-           inverse_of: :following
+           inverse_of: :followed
   has_many :following_users, through: :followeds, source: :following # フォローする側
   has_many :followed_users, through: :followings, source: :followed # フォローされる側
 

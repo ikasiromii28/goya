@@ -7,9 +7,10 @@ class PostsController < ApplicationController
   end
 
   def create
+    get_week
     @post = Post.new(post_params)
     if @post.save
-      redirect_to root_path
+      redirect_to action: :index
     else
       render action: :index
     end

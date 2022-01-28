@@ -3,6 +3,7 @@
     <h1>気持ち</h1>
     <div class='kibun'>
       <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
         <%= f.date_field :date, class: 'select' %>
         <%= f.radio_button :kibun, :ごっつえんかんじ %>
         <%= f.label :kibun, "ごっつえんかんじ" %>

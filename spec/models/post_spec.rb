@@ -15,13 +15,13 @@ RSpec.describe Post, type: :model do
       it '気分が空では投稿できない' do
         @post.kibun = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("気分は入力されていません")
+        expect(@post.errors.full_messages).to include('気分は入力されていません')
       end
       it '日付が空では投稿できない' do
         @post.date = ''
         @post.valid?
-        expect(@post.errors.full_messages).to include("日付は入力されていません")
-      end     
+        expect(@post.errors.full_messages).to include('日付は入力されていません')
+      end
       it 'ユーザーが紐付いていなければ投稿できない' do
         @post.user = nil
         @post.valid?

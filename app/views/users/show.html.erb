@@ -1,12 +1,6 @@
-<div class="title">
-  <% if current_user != @user %>
-    <%= @nickname %>さんのユーザーページ
-  <% else %>
-    <%= @nickname %>さんのマイページ
-  <% end %>
-</div>
+<h1><%= @nickname %>さんのマイページ</h1>
 
-<div class="info2">
+<div class="info">
   <% if current_user != @user %>
     <% if relationship = Relationship.find_by(followed_id: @user.id, following_id: current_user.id) %>
       <%= link_to 'Unfollow', user_relationship_path(@user, relationship), method: :delete %>
@@ -22,41 +16,50 @@
   <% end %>
 </div>
 
-<div class="count">
+<div class="info">
   <p>
-    <%= link_to "フォロー：#{@user.followings.count}人", followeds_user_path %>
+    <%= link_to "フォロー：#{@user.followings.count}人", followings_user_path %>
   </p>
   <p>
-    <%= link_to "フォロワー：#{@user.followeds.count}人", followings_user_path %>
+    <%= link_to "フォロワー：#{@user.followeds.count}人", followeds_user_path %>
   </p>
   <p>
     投稿数：<%= @posts.count %>
   </p>
 </div>
 
-<div class="right">
-  <% unless params[:sort_update] %>
-    <%= link_to '投稿日でソートする', user_path(sort_update: "false") %>
-  <% else %>
-    <%= link_to '更新日時でソートする', user_path(@user) %>
-  <% end%>
+<div class="info">
+  お誕生日：<%= @user.birthday.strftime("%Y年%m月%d日") %>
 </div>
 
 <div class='post'>
   <% if @posts.present? %>
-    <% @posts.each do |post| %>
-      <div class='item'>
-        <div class='date'>
-          <%= post.date.strftime("%Y/%m/%d") %>
-        </div>
-        <ul class='content'>
-          <li class='post-list'>
+    <table class="tableclass">
+      <tr>
+        <th class="table">
+          <%= link_to '日付', user_path(@user) %>
+        </th>
+        <th class="table">
+          気持ち
+        </th>
+        <th class="table">
+          <%= link_to '更新日時', user_path(sort_update: "false") %>
+        </th>
+      </tr>
+      <% @posts.each do |post| %>
+        <tr>
+          <td class="table">
+            <%= post.date.strftime("%Y年%m月%d日") %>
+          </td>
+          <td class="table">
             <%= post.kibun %>
-            （投稿日：<%= post.created_at.strftime("%Y/%m/%d %H:%M") %>）
-          </li>
-        </ul>
-      </div>
-    <% end %>
+          </td>
+          <td class="table">
+            <%= post.created_at.strftime("%Y年%m月%d日 %H:%M") %>
+          </td>
+        </tr>
+      <% end %>
+    </table>
   <% else %>
     投稿がありません
   <% end %>

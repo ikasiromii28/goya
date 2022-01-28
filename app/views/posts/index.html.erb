@@ -1,39 +1,55 @@
 <div class='post'>
   <div class="kimochi">
-    <h3>今日の気持ち</h3>
-    <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
-      <%= f.date_field :date, class: 'select' %>
-      <%= f.radio_button :kibun, :ええかんじよ %>
-      <%= f.label :kibun, "優", {value: :優, style: "display: inline-block;"} %>
-      <%= f.radio_button :kibun, :ぼちぼちでんなあ %>
-      <%= f.label :kibun, "良", {value: :良, style: "display: inline-block;"} %>
-      <%= f.radio_button :kibun, :可 %>
-      <%= f.label :kibun, "可", {value: :可, style: "display: inline-block;"} %>
-      <%= f.radio_button :kibun, :あかんわ %>
-      <%= f.label :kibun, "不可", {value: :不可, style: "display: inline-block;"} %>
-      <%= f.submit "投稿" %>
-    <% end %>
+    <h1>気持ち</h1>
+    <div class='kibun'>
+      <%= form_with(model: @post, url: posts_path, local: true) do |f| %>
+      <%= render 'layouts/error_messages', model: f.object %>
+        <%= f.date_field :date, class: 'select' %>
+        <%= f.radio_button :kibun, :ごっつえんかんじ %>
+        <%= f.label :kibun, "ごっつえんかんじ" %>
+        <%= f.radio_button :kibun, :ええかんじ %>
+        <%= f.label :kibun, "ええかんじ" %>
+        <%= f.radio_button :kibun, :ぼちぼちでんなあ %>
+        <%= f.label :kibun, "ぼちぼちでんなあ" %>
+        <%= f.radio_button :kibun, :あかんわ %>
+        <%= f.label :kibun, "あかんわ" %>
+        <%= f.submit "投稿" %>
+      <% end %>
+    </div>
   </div>
 </div>
 
 <div class='post'>
-  <% @week_days.each do |day| %>
-    <div class='item'>
-      <div class='date'>
-        <%= day[:month] %>/<%= day[:date] %><%= day[:wday]%>
-        <div class="count">
-          気分の投稿：<%= day[:posts].count %>
-        </div>
-      </div>
-      <ul class='content'>
-        <% if day[:posts].length != 0 %>
-          <% day[:posts].each do |post| %>
-            <li class='post-list'>
-              <%= post.kibun%>
-            </li>
-          <% end %>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <table class="tableclass">
+    <tr>
+      <th class="table1">
+        日付
+      </th>
+      <th class="table1">
+        投稿数
+      </th>
+      <th class="table2">
+        気持ち
+      </th>
+    </tr>
+    <% @week_days.reverse_each do |day| %>
+      <tr>
+        <td class="table1">
+          <%= day[:month] %>月<%= day[:date] %>日
+        </td>
+        <td class="table1">
+          <%= day[:posts].count %>
+        </td>
+        <td class="table2">
+          <ul>
+            <% day[:posts].each do |post| %>
+              <li class='post-list'>
+                <%= post.kibun%>
+              </li>
+            <% end %>
+          </ul>
+        </td>
+      </tr>
+    <% end %>
+  </table>
 </div>

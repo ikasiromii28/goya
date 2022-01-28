@@ -2,22 +2,24 @@
   margin: 10px;
 }
 
-.count {
-  justify-content: center;
-  font-size: 3vh;
-  padding-left: 10px;
+.list {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
 }
 
-.user-post-list {
-  font-size: 3vh;
-  align-items: center;
-  justify-content: center;
-  margin: 1vh 0;
+.right {
+  margin-right: 500px;
 }
 
-.sort {
-  font-size: 3vh;
-  align-items: center;
-  justify-content: right;
-  padding-right: 10px;
+.tableclass {
+  width: 90%;
+}
+
+.table {
+  width: calc(100% / 3);
+  border: 1px solid #dedede;
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
 }

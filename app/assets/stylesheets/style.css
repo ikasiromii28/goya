@@ -769,7 +769,7 @@ form input[type="submit"] {
 }
 
 .info2 {
-  margin-left: 10px;
+  margin: 10px;
   font-size: 95%;
   color: darkolivegreen;
   display: flex;
@@ -806,4 +806,9 @@ footer {
 
 footer p {
   text-align: center;
+}
+
+.edit-view {
+  justify-content: center;
+  display: flex;
 }

@@ -1,0 +1,12 @@
+<h1>ユーザーリスト</h1>
+
+<%= form_with(url: search_users_path, local: true, method: :get, class: "search-form") do |f| %>
+  <%= f.text_field :keyword, placeholder: "メールアドレスで検索", class: "search-input" %>
+  <%= f.submit "検索", class: "search-btn" %>
+<% end %>
+
+<div class="list">
+  <% @users.each do |user| %>
+    <%= link_to user.nickname, user_path(user) %>
+  <% end %>
+</div>

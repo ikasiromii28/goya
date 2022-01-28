@@ -1,5 +1,4 @@
-<h1>フォロワーリスト</h1>
-
+<h1>フォロー中のユーザーリスト</h1>
 
 <div class="list">
   <% if @followeds.present? %>
@@ -7,7 +6,7 @@
       <%= link_to user.nickname, user_path(user) %>
     <% end %>
   <% else %>
-    現在あなたをフォローしているユーザーはいません
+    現在フォロー中のユーザーはいません
   <% end %>
 </div>
 

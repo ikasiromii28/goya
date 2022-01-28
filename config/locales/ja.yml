@@ -13,6 +13,10 @@ ja:
         content: 本文
         user: ユーザー
         room: ルーム名
+      post:
+        kibun: 気分
+        user: ユーザー名
+        date: 日付
   time:
     formats:
       default: "%Y/%m/%d %H:%M:%S"

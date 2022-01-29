@@ -29,6 +29,17 @@ https://goya-app-0117.herokuapp.com/
 ## 洗い出した要件
 https://docs.google.com/spreadsheets/d/1-q7hczp2c5YLAE9uEucodyqDwc8mFIGidf91zcT8OS8/edit?usp=sharing
 
+## データベース設計
+[![Image from Gyazo](https://i.gyazo.com/bc82848dd9a0d72868c19c58aa9e776e.png)](https://gyazo.com/bc82848dd9a0d72868c19c58aa9e776e)
+
+## 画面遷移図
+[![Image from Gyazo](https://i.gyazo.com/4b83c0e614efa218fbb2c96d9cd6bd4a.png)](https://gyazo.com/4b83c0e614efa218fbb2c96d9cd6bd4a)
+
+## 開発環境
+・フロントエンド：HTML, CSS, JavaScript<br>・バックエンド：Ruby(ver 2.6.5)/ Ruby on Rails(ver 6.0.0)<br>・テキストエディタ：Visual Studio Code<br>・タスク管理：GitHub
+
 ## ローカルでの動作方法
+以下のコマンドを順に実行。<br>% git clone https://github.com/ikasiromii28/goya.git<br>% cd goya <br>% bundle install <br>% yarn install
 
 ## 工夫したポイント
+全てのユーザーが操作に迷わないようなシンプルな操作性を目指した。

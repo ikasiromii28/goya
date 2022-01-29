@@ -36,7 +36,7 @@ https://docs.google.com/spreadsheets/d/1-q7hczp2c5YLAE9uEucodyqDwc8mFIGidf91zcT8
 [![Image from Gyazo](https://i.gyazo.com/4b83c0e614efa218fbb2c96d9cd6bd4a.png)](https://gyazo.com/4b83c0e614efa218fbb2c96d9cd6bd4a)
 
 ## 開発環境
-・フロントエンド：HTML, CSS, JavaScript<br>・バックエンド：Ruby(ver 2.6.5)/ Ruby on Rails(ver 6.0.0)<br>・テキストエディタ：Visual Studio Code<br>・タスク管理：GitHub
+・フロントエンド：HTML, CSS<br>・バックエンド：Ruby(ver 2.6.5)/ Ruby on Rails(ver 6.0.0)<br>・テキストエディタ：Visual Studio Code<br>・タスク管理：GitHub
 
 ## ローカルでの動作方法
 以下のコマンドを順に実行。<br>% git clone https://github.com/ikasiromii28/goya.git<br>% cd goya <br>% bundle install <br>% yarn install
